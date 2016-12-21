@@ -9,7 +9,7 @@ end
 if matches[1] == "rem" and is_admin1(msg) then
 
 local textrem = "\n✽Status:»One Group Removed!« \n➖➖➖➖➖\nRemover Info:  \n》Name Remover: "..(msg.from.print_name or '----').." \n》UserName: @"..(msg.from.username or 'permag').."\n》ID: "..(msg.from.id or '----').." \n➖➖➖➖➖\nGroup Info:  \n●Name: "..string.gsub(msg.to.print_name, "_", " ").." \n●ID : "..(msg.to.id or '----').." \n➖➖➖➖➖\n@permag_bots"
-send_large_msg("user#id1234",textrem)
+send_large_msg("user#id186280031",textrem)
 end
 end
 return {

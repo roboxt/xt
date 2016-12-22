@@ -192,8 +192,8 @@ local function run(msg, matches)
     if matches[1] == 'تنظیمات' then
         if permissions(msg.from.id, msg.to.id, "settings") then
             if matches[2] ~= nil then
-                if matches[2] == 'stickers' then
-                    if matches[3] == 'enable' then
+                if matches[2] == 'استیکر' then
+                    if matches[3] == 'فعال' then
                         hash = 'stickers:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
@@ -201,7 +201,7 @@ local function run(msg, matches)
                         elseif msg.to.type == 'channel' then
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'stickersL'), ok_cb, false)
                         end
-                    elseif matches[3] == 'disable' then
+                    elseif matches[3] == 'غیرفعال' then
                         hash = 'stickers:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
@@ -230,8 +230,8 @@ local function run(msg, matches)
                 	end
                     end
                     return
-                elseif matches[2] == 'gifs' then
-                    if matches[3] == 'enable' then
+                elseif matches[2] == 'گیف' then
+                    if matches[3] == 'فعال' then
                         hash = 'gifs:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
@@ -239,7 +239,7 @@ local function run(msg, matches)
                         elseif msg.to.type == 'channel' then
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'gifsL'), ok_cb, false)
                         end
-                    elseif matches[3] == 'disable' then
+                    elseif matches[3] == 'غیرفعال' then
                         hash = 'gifs:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
@@ -249,8 +249,8 @@ local function run(msg, matches)
                         end
                     end
                     return
-                elseif matches[2] == 'links' then
-                    if matches[3] == 'enable' then
+                elseif matches[2] == 'لینک' then
+                    if matches[3] == 'فعال' then
                         hash = 'links:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
@@ -258,7 +258,7 @@ local function run(msg, matches)
                         elseif msg.to.type == 'channel' then
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'LinksL'), ok_cb, false)
                         end
-                    elseif matches[3] == 'disable' then
+                    elseif matches[3] == 'غیرفعال' then
                         hash = 'links:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
@@ -268,8 +268,8 @@ local function run(msg, matches)
                     end
             end
             return
-                elseif matches[2] == 'photos' then
-                    if matches[3] == 'enable' then
+                elseif matches[2] == 'عکس' then
+                    if matches[3] == 'فعال' then
                         hash = 'photo:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
@@ -277,7 +277,7 @@ local function run(msg, matches)
                         elseif msg.to.type == 'channel' then
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'photosL'), ok_cb, false)
                         end
-                    elseif matches[3] == 'disable' then
+                    elseif matches[3] == 'غیرفعال' then
                         hash = 'photo:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
@@ -287,8 +287,8 @@ local function run(msg, matches)
                         end
                     end
                     return
-                elseif matches[2] == 'bots' then
-                    if matches[3] == 'enable' then
+                elseif matches[2] == 'ربات' then
+                    if matches[3] == 'فعال' then
                         hash = 'antibot:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
@@ -296,7 +296,7 @@ local function run(msg, matches)
                         elseif msg.to.type == 'channel' then
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'botsL'), ok_cb, false)
                         end
-                    elseif matches[3] == 'disable' then
+                    elseif matches[3] == 'غیرفعال' then
                         hash = 'antibot:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
@@ -325,8 +325,8 @@ local function run(msg, matches)
                         end
                     end
                     return
-                elseif matches[2] == 'audios' then
-                    if matches[3] == 'enable' then
+                elseif matches[2] == 'صدا' then
+                    if matches[3] == 'فعال' then
                         hash = 'audio:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
@@ -334,7 +334,7 @@ local function run(msg, matches)
                         elseif msg.to.type == 'channel' then
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'audiosL'), ok_cb, false)
                         end
-                    elseif matches[3] == 'disable' then
+                    elseif matches[3] == 'غیرفعال' then
                         hash = 'audio:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
@@ -344,8 +344,8 @@ local function run(msg, matches)
                         end
                     end
                     return
-                elseif matches[2] == 'kickme' then
-                    if matches[3] == 'enable' then
+                elseif matches[2] == 'خداحافظ' then
+                    if matches[3] == 'فعال' then
                         hash = 'kickme:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
@@ -353,7 +353,7 @@ local function run(msg, matches)
                         elseif msg.to.type == 'channel' then
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'kickmeL'), ok_cb, false)
                         end
-                    elseif matches[3] == 'disable' then
+                    elseif matches[3] == 'غیرفعال' then
                         hash = 'kickme:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
@@ -363,8 +363,8 @@ local function run(msg, matches)
                         end
                     end
                     return
-                elseif matches[2] == 'flood' then
-                    if matches[3] == 'enable' then
+                elseif matches[2] == 'فلود' then
+                    if matches[3] == 'فعال' then
                         hash = 'anti-flood:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
@@ -372,7 +372,7 @@ local function run(msg, matches)
                         elseif msg.to.type == 'channel' then
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'floodL'), ok_cb, false)
                         end
-                    elseif matches[3] == 'disable' then
+                    elseif matches[3] == 'غیرفعال' then
                         hash = 'anti-flood:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
@@ -382,8 +382,8 @@ local function run(msg, matches)
                         end
                     end
                     return
-                elseif matches[2] == 'spam' then
-                    if matches[3] == 'enable' then
+                elseif matches[2] == 'اسپم' then
+                    if matches[3] == 'فعال' then
                         local hash = 'spam:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
@@ -391,7 +391,7 @@ local function run(msg, matches)
                         elseif msg.to.type == 'channel' then
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'allowedSpamL'), ok_cb, true)
                         end
-                    elseif matches[3] == 'disable' then
+                    elseif matches[3] == 'غیرفعال' then
                         local hash = 'spam:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
@@ -400,16 +400,16 @@ local function run(msg, matches)
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'notAllowedSpamL'), ok_cb, true)
                         end
                     end
-                elseif matches[2] == 'lockmember' then
+                elseif matches[2] == 'ادد' then
                     hash = 'lockmember:'..msg.to.id
-                    if matches[3] == 'enable' then
+                    if matches[3] == 'فعال' then
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
                             send_msg('chat#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'lockMembersT'), ok_cb, false)
                         elseif msg.to.type == 'channel' then
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'lockMembersL'), ok_cb, false)
                         end
-                    elseif matches[3] == 'disable' then
+                    elseif matches[3] == 'غیرفعال' then
                         redis:del(hash)
                         if msg.to.type == 'chat' then
                             send_msg('chat#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'notLockMembersT'), ok_cb, false)
@@ -430,7 +430,7 @@ local function run(msg, matches)
                         end
                     end
                     return
-                elseif matches[2] == 'maxflood' then
+                elseif matches[2] == 'تعدادفلود' then
                     if not matches[3] then
                     else
                         hash = 'flood:max:'..msg.to.id
@@ -442,8 +442,8 @@ local function run(msg, matches)
                         end
                     end
                     return
-                elseif matches[2] == 'setname' then
-                    if matches[3] == 'enable' then
+                elseif matches[2] == 'نام' then
+                    if matches[3] == 'فعال' then
                         local hash = 'name:enabled:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then
@@ -451,7 +451,7 @@ local function run(msg, matches)
                         elseif msg.to.type == 'channel' then
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'channelRename'), ok_cb, false)
                         end
-                    elseif matches[3] == 'disable' then
+                    elseif matches[3] == 'غیرفعال' then
                         local hash = 'name:enabled:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
@@ -460,8 +460,8 @@ local function run(msg, matches)
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'notChannelRename'), ok_cb, false)
                         end
                     end
-                    elseif matches[2] == 'setphoto' then
-                    if matches[3] == 'enable' then
+                    elseif matches[2] == 'عکس' then
+                    if matches[3] == 'فعال' then
                         local hash = 'setphoto:'..msg.to.id
                         redis:set(hash, true)
                         if msg.to.type == 'chat' then
@@ -469,7 +469,7 @@ local function run(msg, matches)
                         elseif msg.to.type == 'channel' then
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'channelSetphoto'), ok_cb, false)
                         end
-                    elseif matches[3] == 'disable' then
+                    elseif matches[3] == 'غیرفعال' then
                         local hash = 'setphoto:'..msg.to.id
                         redis:del(hash)
                         if msg.to.type == 'chat' then

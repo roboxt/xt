@@ -189,7 +189,7 @@ local function pre_process(msg)
 end
 
 local function run(msg, matches)
-    if matches[1] == 'settings' then
+    if matches[1] == 'تنظیمات' then
         if permissions(msg.from.id, msg.to.id, "settings") then
             if matches[2] ~= nil then
                 if matches[2] == 'stickers' then

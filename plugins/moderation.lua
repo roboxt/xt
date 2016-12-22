@@ -437,7 +437,7 @@ local function run(msg, matches)
         else
             return '🚫 '..lang_text(msg.to.id, 'require_mod')
         end
-    elseif matches[1] == 'unban' then
+    elseif matches[1] == 'انبلاک' then
         if permissions(msg.from.id, msg.to.id, "unban") then
             local chat_id = msg.to.id
             local chat_type = msg.to.type
@@ -466,7 +466,7 @@ local function run(msg, matches)
         else
             return '🚫 '..lang_text(msg.to.id, 'require_mod')
         end
-    elseif matches[1] == 'kick' then
+    elseif matches[1] == 'ریمو' then
         if permissions(msg.from.id, msg.to.id, "kick") then
             local chat_id = msg.to.id
             local chat_type = msg.to.type
@@ -526,7 +526,7 @@ local function run(msg, matches)
         else
             return '🚫 '..lang_text(msg.to.id, 'require_admin')
         end
-    elseif matches[1] == 'ungban' then
+    elseif matches[1] == 'آنبلاک' then
         if permissions(msg.from.id, msg.to.id, "ungban") then
         	chat_id = msg.to.id
         	chat_type = msg.to.type
@@ -561,7 +561,7 @@ local function run(msg, matches)
         else
             return '🚫 '..lang_text(msg.to.id, 'require_mod')
         end
-    elseif matches[1] == 'add' then
+    elseif matches[1] == 'ادد' then
         if permissions(msg.from.id, msg.to.id, "add") then
             local chat_id = msg.to.id
             local chat_type = msg.to.type
@@ -588,7 +588,7 @@ local function run(msg, matches)
         else
             return '🚫 '..lang_text(msg.to.id, 'require_mod')
         end
-    elseif matches[1] == 'mute' then
+    elseif matches[1] == 'سکوت' then
         if permissions(msg.from.id, msg.to.id, "mute") then
             if msg.reply_id then
                 get_message(msg.reply_id, mute_by_reply, false)
@@ -615,7 +615,7 @@ local function run(msg, matches)
         else
             return '🚫 '..lang_text(msg.to.id, 'require_mod')
         end
-    elseif matches[1] == 'unmute' then
+    elseif matches[1] == 'انسکوت' then
         if permissions(msg.from.id, msg.to.id, "unmute") then
             if msg.reply_id then
                 get_message(msg.reply_id, unmute_by_reply, false)
@@ -642,7 +642,7 @@ local function run(msg, matches)
         else
             return '🚫 '..lang_text(msg.to.id, 'require_mod')
         end
-    elseif matches[1] == 'kickme' then
+    elseif matches[1] == 'خداحافظ' then
         local hash = 'kickme:'..msg.to.id
         if redis:get(hash) then
             if msg.to.type == 'chat' then
@@ -658,23 +658,23 @@ end
 
 return {
     patterns = {
-        "^(ban) (.*)$",
-        "^(ban)$",
-        "^(unban) (.*)$",
-        "^(unban)$",
-        "^(kick) (.*)$",
-        "^(kick)$",
-        "^(kickme)$",
-        "^(add) (.*)$",
-        "^(add)$",
+        "^(بلاک) (.*)$",
+        "^(بلاک)$",
+        "^(انبلاک) (.*)$",
+        "^(انبلاک)$",
+        "^(ریمو) (.*)$",
+        "^(ریمو)$",
+        "^(خداحافظ)$",
+        "^(ادد) (.*)$",
+        "^(ادد)$",
         "^(gban) (.*)$",
         "^(gban)$",
         "^(ungban) (.*)$",
         "^(ungban)$",
-        '^(mute) (.*)$',
-        '^(mute)$',
-        '^(unmute) (.*)$',
-        '^(unmute)$',
+        '^(سکوت) (.*)$',
+        '^(سکوت)$',
+        '^(انسکوت) (.*)$',
+        '^(انسکوت)$',
         "^(tgservice) (.*)$"
     },
     run = run,

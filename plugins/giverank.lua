@@ -266,8 +266,8 @@ end
 local function run(msg, matches)
 	user_id = msg.from.id
 	chat_id = msg.to.id
-	if matches[1] == 'rank' then
-		if matches[2] == 'admin' then
+	if matches[1] == 'رتبه' then
+		if matches[2] == 'ادمین' then
 			if permissions(user_id, chat_id, "rank_admin") then
 				if msg.reply_id then
 					get_message(msg.reply_id, admin_by_reply, false)
@@ -287,7 +287,7 @@ local function run(msg, matches)
 				return '🚫 '..lang_text(msg.to.id, 'require_sudo')
 			end
 		end
-		if matches[2] == 'mod' then
+		if matches[2] == 'مدیر' then
 			if permissions(user_id, chat_id, "rank_mod") then
 				if msg.reply_id then
 					get_message(msg.reply_id, mod_by_reply, false)
@@ -307,7 +307,7 @@ local function run(msg, matches)
 				return '🚫 '..lang_text(msg.to.id, 'require_admin')
 			end
 		end
-		if matches[2] == 'guest' then
+		if matches[2] == 'کاربر' then
 			if permissions(user_id, chat_id, "rank_guest") then
 				if msg.reply_id then
 					get_message(msg.reply_id, guest_by_reply, false)
@@ -327,7 +327,7 @@ local function run(msg, matches)
 				return '🚫 '..lang_text(msg.to.id, 'require_sudo')
 			end
 		end
-	elseif matches[1] == 'admins' then
+	elseif matches[1] == 'ادمینها' then
 		if permissions(user_id, chat_id, "admins") then
 		  	-- Check users id in config
 		  	local text = '🔆 '..lang_text(msg.to.id, 'adminList')..':\n'
@@ -342,7 +342,7 @@ local function run(msg, matches)
 		else
 			return '🚫 '..lang_text(msg.to.id, 'require_mod')
 		end
-	elseif matches[1] == 'members' then
+	elseif matches[1] == 'اعضا' then
 		if permissions(user_id, chat_id, "members") then
 			local chat_id = msg.to.id
 			if matches[2] then
@@ -366,7 +366,7 @@ local function run(msg, matches)
 		else
 			return '🚫 '..lang_text(msg.to.id, 'require_mod')
 		end
-	elseif matches[1] == 'mods' then
+	elseif matches[1] == 'مدیران' then
 		if permissions(user_id, chat_id, "mods") then
 			local chat_id = msg.to.id
 		 	if msg.to.type == 'chat' then
@@ -386,12 +386,12 @@ end
 
 return {
   patterns = {
-  	"^[!/#](rank) (.*) (.*)$",
-  	"^[!/#](rank) (.*)$",
-  	"^[!/#](admins)$",
-  	"^[!/#](mods)$",
-  	"^[!/#](members)$",
-  	"^[!/#](members) (.*)$"
+  	"^(رتبه) (.*) (.*)$",
+  	"^(رتبه) (.*)$",
+  	"^(ادمینها)$",
+  	"^(مدیران)$",
+  	"^(اعضا)$",
+  	"^(اعضا) (.*)$"
   },
   run = run
 }

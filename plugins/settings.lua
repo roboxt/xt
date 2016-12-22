@@ -698,7 +698,7 @@ local function run(msg, matches)
         else
             return '🚫 '..lang_text(msg.to.id, 'require_sudo')
         end
-    elseif matches[1] == 'اسم' then
+    elseif matches[1] == 'نام' then
         if permissions(msg.from.id, msg.to.id, "settings") then
             local hash = 'name:enabled:'..msg.to.id
             if not redis:get(hash) then
@@ -867,7 +867,7 @@ return {
    '^(تنظیمات)$',
    '^(تنظیمات) (.*) (.*)$',        
    '^(پاک)$',
-   '^(اسم) (.*)$',
+   '^(نام) (.*)$',
    '^(عکس)$',
    '^(عکس) (.*)$',
    '^(بسته)$',

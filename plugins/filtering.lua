@@ -130,9 +130,9 @@ return {
 		"filter - (word) : حذف از فیلتر",
 	},
 	patterns = {
-		"^[Ff](ilter) (.+) (.*)$",
-		"^[Ff](ilterlist)$",
-		"(.*)",
+		"^filter (.+) (.*)$",
+		"^filterlist$",
+		"^filter(.*)",
 	},
 	run = run
 }

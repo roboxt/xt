@@ -6,7 +6,7 @@ local function run(msg, matches)
 end
 return {
   patterns = {
-    "^[!/#]fal$"
+    "^فال$"
   },
   run = run
 }

@@ -285,7 +285,7 @@ local function run(msg, matches)
 
         -- commands.lua --
         set_text(LANG, 'commands:0', 2)
-        set_text(LANG, 'commands:1', '#commands : نمایش دستورات تمامی پلاگین ها')
+        set_text(LANG, 'commands:1', '#commands : نمایش دستورات تمامی پلاگین های ربات اکس تی')
         set_text(LANG, 'commands:2', '#commands [plugin] : نمایش دستورات پلاگین مورد نظر')
 
         -- export_gban.lua --

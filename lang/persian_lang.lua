@@ -152,14 +152,14 @@ local function run(msg, matches)
 
         set_text(LANG, 'chatSetphoto', 'تعویض عکس گروه فعال شد.')
         set_text(LANG, 'channelSetphoto', 'تعویض عکس گروه فعال شد.')
-        set_text(LANG, 'notChatSetphoto', 'Now you can\'t setphoto in this chat.')
-        set_text(LANG, 'notChannelSetphoto', 'Now you can\'t setphoto in this channel.')
-        set_text(LANG, 'setPhotoError', 'Please, enable setphoto settings.')
+        set_text(LANG, 'notChatSetphoto', 'تعویض عکس گروه غیرفعال شد.')
+        set_text(LANG, 'notChannelSetphoto', 'تعویض عکس گروه غیرفعال شد.')
+        set_text(LANG, 'setPhotoError', 'لـطفا ابتدا تعویض عکس گروه را فعال کنید.')
 
         set_text(LANG, 'linkSaved', 'لینک جدید با موفقیت ذخیره شد')
         set_text(LANG, 'groupLink', 'لینک گروه :')
         set_text(LANG, 'sGroupLink', 'لینک سوپرگروه :')
-        set_text(LANG, 'noLinkSet', 'هیچ لینکی تنظیم نشده است. لطفا با دستور #setlink [link] لینک جدیدی بسازید.')
+        set_text(LANG, 'noLinkSet', 'هیچ لینکی تنظیم نشده است. لطفا با دستور #تعویض (لینک)  لینک جدیدی بسازید.')
 
         set_text(LANG, 'chatRename', 'از این به بعد میتوانید اسم گروه را تغییر دهید')
         set_text(LANG, 'channelRename', 'از این به بعد میتوانید اسم چنل را تغییر دهید')
@@ -189,7 +189,7 @@ local function run(msg, matches)
         set_text(LANG, 'newGroupWelcome', 'به گروه جدیدتان خوش امدید!')
 
         -- export_gban.lua --
-        set_text(LANG, 'accountsGban', 'اکانت مورد نظر به صورت جهانی مسدود شد')
+        set_text(LANG, 'accountsGban', 'اکانت مورد نظر ازتمام  گپ های اکس تی مسدود شد')
 
         -- giverank.lua --
         set_text(LANG, 'alreadyAdmin', 'این شخص درحال حاضر ادمین است.')
@@ -225,13 +225,13 @@ local function run(msg, matches)
         set_text(LANG, 'banUser:2', 'مسدود شد.')
 
         set_text(LANG, 'unbanUser:1', 'کاربر')
-        set_text(LANG, 'unbanUser:2', 'از حالت مسدود خارج شد.')
+        set_text(LANG, 'unbanUser:2', 'از حالت مسدود گپ های اکس تی خارج شد.')
 
         set_text(LANG, 'gbanUser:1', 'کاربر')
-        set_text(LANG, 'gbanUser:2', 'به صورت جهانی مسدود شد.')
+        set_text(LANG, 'gbanUser:2', 'ازتمام گپ های اکس تی مسدود شد.')
 
         set_text(LANG, 'ungbanUser:1', 'کاربر')
-        set_text(LANG, 'ungbanUser:2', 'از حالت مسدود جهانی خارج شد.')
+        set_text(LANG, 'ungbanUser:2', 'از حالت مسدود گپ های اکس تی خارج شد.')
 
         set_text(LANG, 'addUser:1', 'کاربر')
         set_text(LANG, 'addUser:2', 'به گروه اضافه شد.')
@@ -268,11 +268,11 @@ local function run(msg, matches)
 
         -- commands.lua --
         set_text(LANG, 'commandsT', 'دستورات')
-        set_text(LANG, 'errorNoPlug', 'این پلاگین وجود ندارد و یا فعال نیست.')
+        set_text(LANG, 'errorNoPlug', 'این پلاگین وجود ندارد و یا فعال نیست لطفا به سازنده ربات @shahin_xt پیام بدید.')
 
         -- rules.lua --
-        set_text(LANG, 'setRules', 'Chat rules have been updated.')
-        set_text(LANG, 'remRules', 'Chat rules have been removed.')
+        set_text(LANG, 'setRules', 'توضیحات گـپ ذخـیره شـد.')
+        set_text(LANG, 'remRules', 'توضیحات گـپ پـاک شـد.')
 
         ------------
         -- Usages --
@@ -290,12 +290,12 @@ local function run(msg, matches)
 
         -- export_gban.lua --
         set_text(LANG, 'export_gban:0', 2)
-        set_text(LANG, 'export_gban:1', '#gbans installer : فرستادن لیست مسدود های جهانی به صورت یک فایل لوآ برای اشتراک گذاری با ربات های دیگر')
-        set_text(LANG, 'export_gban:2', '#gbans list : ارسال لیست مسدود های جهانی')
+        set_text(LANG, 'export_gban:1', '#gbans installer : فرستادن لیست مسدودین گپ های اکس تی به صورت یک فایل لوآ برای اشتراک گذاری با ربات های دیگر')
+        set_text(LANG, 'export_gban:2', '#gbans list : ارسال لیست مسدودین گپ های اکس تی')
 
         -- gban_installer.lua --
         set_text(LANG, 'gban_installer:0', 1)
-        set_text(LANG, 'gban_installer:1', '#install gbans : افزودن لیست مسدود های جهانی به پایگاه داده شما')
+        set_text(LANG, 'gban_installer:1', '#install gbans : افزودن لیست مسدودین گپ های اکس تی به پایگاه داده شما')
 
         -- giverank.lua --
         set_text(LANG, 'giverank:0', 9)
@@ -383,7 +383,7 @@ local function run(msg, matches)
             return 'ℹ️ زبان فارسی با موفقیت بروز رسانی شد.'
         end
     else
-        return "🚫 این پلاگین نیاز به دسترسی سودو دارد."
+        return "🚫 این پلاگین نیاز به دسترسی سودو دارد اگر مشکلی هست به سازنده ربات @shahin_xt پیام بدید."
     end
 end
 

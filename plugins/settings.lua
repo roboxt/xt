@@ -460,7 +460,7 @@ local function run(msg, matches)
                             send_msg('channel#id'..msg.to.id, 'ℹ️ '..lang_text(msg.to.id, 'notChannelRename'), ok_cb, false)
                         end
                     end
-                    elseif matches[2] == 'عکس' then
+                    elseif matches[2] == 'تصویرگپ' then
                     if matches[3] == 'فعال' then
                         local hash = 'setphoto:'..msg.to.id
                         redis:set(hash, true)

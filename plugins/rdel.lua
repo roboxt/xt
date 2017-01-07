@@ -1,6 +1,17 @@
 do
---create by RoyalTeam ID CHANNEL : @RoyalTeamCh >>>>>>tnx to @@Mehrpouya
-local function get_message_callback(extra, success, result)
+A--------------------------------------------------
+--      ____  ____ _____                        --
+--     |    \|  _ )_   _|___ ____   __  __      --
+--     | |_  )  _ \ | |/ ·__|  _ \_|  \/  |     --
+--     |____/|____/ |_|\____/\_____|_/\/\_|     --
+--                                              --
+--------------------------------------------------
+--                                              --
+--       Developers: @Josepdal & @MaSkAoS       --
+--     Support: @Skneos,  @iicc1 & @serx666     --
+--              @h3iran :D                      --
+--------------------------------------------------
+  local function get_message_callback(extra, success, result)
   if result.to.peer_type == 'channel' then
     if our_id == result.from.peer_id then
       --local del = delete_msg(result.id, ok_cb, true)
@@ -27,7 +38,7 @@ return {
    usage = {
    },
    patterns = {
-      "^[!/#](del)$"
+      "^del$"
    },
    run = run,
    moderated = true,

@@ -115,7 +115,7 @@ local function run(msg, matches)
 		i=i+1
 		local tar_font = fonts[i]:split(",")
 		local text = matches[2]
-		local text = text:gsub("A",tar_font[XTBOT_1])
+		local text = text:gsub("A",tar_font[1])
 		local text = text:gsub("B",tar_font[2])
 		local text = text:gsub("C",tar_font[3])
 		local text = text:gsub("D",tar_font[4])
@@ -186,16 +186,16 @@ local function run(msg, matches)
 		a=a+1
 		result_text = result_text..a.."- "..result[a].."\n\n"
 	end
-	return result_text.."plugins BY XT  @SHAHIN_XtBot"
+	return result_text.."@GoldTeam"
 end
 
 return {
 	description = "Fantasy Writer",
-	usagehtm = '<tr><td align="center">بنویس متن</td><td align="right">با استفاده از این پلاگین میتوانید متون خود را با فونت های متنوع و زیبایی طراحی کنید. حد اکثر کاراکتر های مجاز 20 عدد میباشد و فقط میتوانید از حروف انگلیسی و اعداد استفاده کنید</td></tr>',
+	usagehtm = '<tr><td align="center">write متن</td><td align="right">با استفاده از این پلاگین میتوانید متون خود را با فونت های متنوع و زیبایی طراحی کنید. حد اکثر کاراکتر های مجاز 20 عدد میباشد و فقط میتوانید از حروف انگلیسی و اعداد استفاده کنید</td></tr>',
 	usage = {"write [text] : زیبا نویسی",},
 	patterns = {
-		"^([#/!]write) (.*)",
-		"^([#/!]write)$",
+		"^([ب]نویس) (.*)",
+		"^([ب]نویس)$",
 		},
 	run = run
 }

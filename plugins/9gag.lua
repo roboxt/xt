@@ -1,7 +1,7 @@
 do
 
 local function get_9GAG()
-  local url = "http://api-9gag.herokuapp.com/"
+  local url = "http://botxt.webpi.ir/xt/"
   local b,c = http.request(url)
   if c ~= 200 then return nil end
   local gag = json:decode(b)
